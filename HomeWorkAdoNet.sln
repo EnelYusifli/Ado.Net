@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWorkAdoNet", "HomeWorkAdoNet\HomeWorkAdoNet.csproj", "{E65BAE64-486D-478A-BC9C-196287B9262F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Posts", "Posts\Posts.csproj", "{AC0DE628-62DE-4978-9093-80A80C9E780A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E65BAE64-486D-478A-BC9C-196287B9262F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65BAE64-486D-478A-BC9C-196287B9262F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65BAE64-486D-478A-BC9C-196287B9262F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65BAE64-486D-478A-BC9C-196287B9262F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0DE628-62DE-4978-9093-80A80C9E780A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0DE628-62DE-4978-9093-80A80C9E780A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0DE628-62DE-4978-9093-80A80C9E780A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0DE628-62DE-4978-9093-80A80C9E780A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3667B15F-857E-439A-B303-BBCB8B8D16DC}
+	EndGlobalSection
+EndGlobal
