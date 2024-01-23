@@ -6,7 +6,7 @@ public static class Methods
 {
     public static async Task AddPostToDatabase(int id)
     {
-        string connectionString = @"Server=ENEL\SQLEXPRESS;Database=Posts;Trusted_Connection=true;";
+        string connectionString = @"Server=TITAN06\SQLEXPRESS;Database=Posts;Trusted_Connection=true;";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -39,7 +39,7 @@ public static class Methods
     }
     public static async Task GetMissingPostsFromApi()
     {
-        string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;";
+        string connectionString = @"Data Source=TITAN06\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -72,7 +72,7 @@ public static class Methods
     }
     public static async Task<int> GetPostCountOfUser(int userId)
     {
-        string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;"; ;
+        string connectionString = @"Data Source=TITAN06\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;"; ;
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();

@@ -10,3 +10,15 @@ C:\Users\HP\source\repos\HomeWorkAdoNet\Posts\obj\Debug\net6.0\Posts.dll
 C:\Users\HP\source\repos\HomeWorkAdoNet\Posts\obj\Debug\net6.0\refint\Posts.dll
 C:\Users\HP\source\repos\HomeWorkAdoNet\Posts\obj\Debug\net6.0\Posts.pdb
 C:\Users\HP\source\repos\HomeWorkAdoNet\Posts\obj\Debug\net6.0\ref\Posts.dll
+C:\Users\enelry\Desktop\Ado.Net\Posts\bin\Debug\net6.0\Posts.deps.json
+C:\Users\enelry\Desktop\Ado.Net\Posts\bin\Debug\net6.0\Posts.dll
+C:\Users\enelry\Desktop\Ado.Net\Posts\bin\Debug\net6.0\Posts.pdb
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.csproj.AssemblyReference.cache
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.AssemblyInfoInputs.cache
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.AssemblyInfo.cs
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.csproj.CoreCompileInputs.cache
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.dll
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\refint\Posts.dll
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\Posts.pdb
+C:\Users\enelry\Desktop\Ado.Net\Posts\obj\Debug\net6.0\ref\Posts.dll
