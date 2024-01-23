@@ -13,7 +13,7 @@ while (isContinue)
     {
         switch (intOption)
         {
-            case 1:
+            case (int)Posts.Helper.Enum.AddPostToDatabase:
                 try
                 {
                     Console.WriteLine("Enter post Id");
@@ -30,7 +30,7 @@ while (isContinue)
                     Console.ResetColor();
                 }
                 break;
-            case 2:
+            case (int)Posts.Helper.Enum.GetMissingPostsFromApi:
                 try
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -45,7 +45,7 @@ while (isContinue)
                     Console.ResetColor();
                 }
                 break;
-            case 3:
+            case (int)Posts.Helper.Enum.GetPostCountOfUser:
                 try
                 {
 
@@ -64,15 +64,16 @@ while (isContinue)
                     Console.ResetColor();
                 }
                 break;
-            case 0:
+            case (int)Posts.Helper.Enum.Exit:
                 isContinue = false;
                 break;
-            default:
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Please enter correct option number");
-                Console.ResetColor();
-                break;
         }
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Please enter correct option number");
+        Console.ResetColor();
     }
 }
 
