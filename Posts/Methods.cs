@@ -88,6 +88,7 @@ public static class Methods
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 int postCount = (int)cmd.ExecuteScalar();
+                Console.WriteLine(postCount);
                 return postCount;
             }
         }
