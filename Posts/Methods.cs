@@ -1,6 +1,7 @@
 ﻿using Posts;
 using Posts.Exceptions;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 public static class Methods
 {
@@ -24,12 +25,18 @@ public static class Methods
             {
                 connection.Open();
                 int affectedRow = 0;
-                string response = await httpClient.GetStringAsync($"https://jsonplaceholder.typicode.com/posts/{id}");
-                List<Post>? JsonPosts = JsonSerializer.Deserialize<List<Post>>(response);
+                string apiResponse = await httpClient.GetStringAsync($"https://jsonplaceholder.typicode.com/posts/{id}");
+                //List<Post> apiPosts = JsonSerializer.Deserialize<List<Post>>(apiResponse);
+                Post? post =
+                JsonSerializer.Deserialize<Post>(apiResponse);
                 string query = $"Insert into Posts(id,userId,title,body)" +
-                $"Values(@json.id,@json.userId,@json.title,@json.body)";
+                $"Values(@id,@userId,@title,@body)";
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
+                    cmd.Parameters.AddWithValue("@id", post.id);
+                    cmd.Parameters.AddWithValue("@userId", post.userId);
+                    cmd.Parameters.AddWithValue("@title", post.title);
+                    cmd.Parameters.AddWithValue("@body", post.body);
                     affectedRow = (int)cmd.ExecuteNonQuery();
                     if (affectedRow > 0)
                         Console.WriteLine("Sucessfully added");
@@ -37,6 +44,7 @@ public static class Methods
             }
         }
     }
+
     public static async Task GetMissingPostsFromApi()
     {
         string connectionString = @"Data Source=TITAN06\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;";
