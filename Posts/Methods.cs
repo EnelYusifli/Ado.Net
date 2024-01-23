@@ -1,13 +1,12 @@
 ﻿using Posts;
 using Posts.Exceptions;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 public static class Methods
 {
     public static async Task AddPostToDatabase(int id)
     {
-        string connectionString = @"Server=TITAN06\SQLEXPRESS;Database=Posts;Trusted_Connection=true;";
+        string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -26,7 +25,6 @@ public static class Methods
                 connection.Open();
                 int affectedRow = 0;
                 string apiResponse = await httpClient.GetStringAsync($"https://jsonplaceholder.typicode.com/posts/{id}");
-                //List<Post> apiPosts = JsonSerializer.Deserialize<List<Post>>(apiResponse);
                 Post? post =
                 JsonSerializer.Deserialize<Post>(apiResponse);
                 string query = $"Insert into Posts(id,userId,title,body)" +
@@ -47,7 +45,7 @@ public static class Methods
 
     public static async Task GetMissingPostsFromApi()
     {
-        string connectionString = @"Data Source=TITAN06\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;";
+        string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -57,6 +55,10 @@ public static class Methods
                 string apiResponse = await httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/posts");
                 List<Post> apiPosts = JsonSerializer.Deserialize<List<Post>>(apiResponse);
                 List<Post> missingPosts = apiPosts.Where(post => !existingPostIds.Contains(post.id)).ToList();
+                if (missingPosts.Count == 0)
+                {
+                    throw new CannotBeNullException("There is not any missing post");
+                }
                 foreach (var missingPost in missingPosts)
                 {
                     Console.WriteLine($"UserId:{missingPost.userId}; Id:{missingPost.id};Title:{missingPost.title}; Body:{missingPost.body}");
@@ -80,7 +82,7 @@ public static class Methods
     }
     public static async Task<int> GetPostCountOfUser(int userId)
     {
-        string connectionString = @"Data Source=TITAN06\SQLEXPRESS;Initial Catalog=Posts;Integrated Security=True;"; ;
+        string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;"; 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -94,5 +96,3 @@ public static class Methods
         }
     }
 }
-
-
