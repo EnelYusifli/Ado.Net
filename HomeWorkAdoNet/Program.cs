@@ -19,7 +19,7 @@ while (isContinue)
                     Console.WriteLine("Enter post Id");
                     int id = Convert.ToInt32(Console.ReadLine());
                     Console.ForegroundColor = ConsoleColor.Green;
-                    await Methods.AddPostToDatabase(id);
+                    await Methods.AddPostToDatabaseAsync(id);
                     Console.ResetColor();
                     break;
                 }
@@ -34,7 +34,7 @@ while (isContinue)
                 try
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    await Methods.GetMissingPostsFromApi();
+                    await Methods.GetMissingPostsFromApiAsync();
                     Console.ResetColor();
                     break;
                 }
@@ -53,7 +53,7 @@ while (isContinue)
                     int userId = Convert.ToInt32(Console.ReadLine());
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("Post Count Of User is ");
-                    await Methods.GetPostCountOfUser(userId);
+                    await Methods.GetPostCountOfUserAsync(userId);
                     Console.ResetColor();
                     break;
                 }

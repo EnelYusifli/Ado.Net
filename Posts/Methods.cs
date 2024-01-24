@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Text.Json;
 public static class Methods
 {
-    public static async Task AddPostToDatabase(int id)
+    public static async Task AddPostToDatabaseAsync(int id)
     {
         string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;";
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -43,7 +43,7 @@ public static class Methods
         }
     }
 
-    public static async Task GetMissingPostsFromApi()
+    public static async Task GetMissingPostsFromApiAsync()
     {
         string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;";
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -80,7 +80,7 @@ public static class Methods
             }
         }
     }
-    public static async Task<int> GetPostCountOfUser(int userId)
+    public static async Task<int> GetPostCountOfUserAsync(int userId)
     {
         string connectionString = @"Data Source=ENEL\SQLEXPRESS;Initial Catalog=AdoNet;Integrated Security=True;"; 
         using (SqlConnection connection = new SqlConnection(connectionString))
